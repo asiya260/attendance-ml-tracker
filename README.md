@@ -50,6 +50,12 @@ streamlit run app.py
 
 
 
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-blue)](https://attendance-ml-tracker-5y5mvue6xsfknbnqp7nvhf.streamlit.app/)
+
+
+
 ## 🔗 Live Demo
 Try the working app here:  
 https://attendance-ml-tracker-5y5mvue6xsfknbnqp7nvhf.streamlit.app/
+
