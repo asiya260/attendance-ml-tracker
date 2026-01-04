@@ -42,6 +42,9 @@ This project combines **calendar-based logic** with **machine learning concepts 
 
 ---
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-blue)](https://attendance-ml-tracker-5y5mvue6xsfknbnqp7nvhf.streamlit.app/)
+
+
 ## ▶️ How to Run
 
 ```bash
@@ -51,7 +54,6 @@ streamlit run app.py
 
 
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-blue)](https://attendance-ml-tracker-5y5mvue6xsfknbnqp7nvhf.streamlit.app/)
 
 
 
