@@ -354,13 +354,30 @@ def get_saturdays_off(start_date, end_date, mode):
 
 saturday_off_dates = get_saturdays_off(start_date, end_date, saturday_off_mode)
 
-# Calculate stats
+# New function to count Sundays in the range
+def count_sundays(start_date, end_date):
+    count = 0
+    date = start_date
+    while date <= end_date:
+        if date.weekday() == 6:  # Sunday
+            count += 1
+        date += timedelta(days=1)
+    return count
+
 total_days = (end_date - start_date).days + 1
 total_saturdays_off = len(saturday_off_dates)
 total_festive = len(festive_dates_str)
+total_sundays = count_sundays(start_date, end_date)
 
-working_days = total_days - total_saturdays_off - total_festive
-leaves_taken = sum(1 for d in leave_dates_str if d not in saturday_off_dates and d not in festive_dates_str)
+working_days = total_days - total_saturdays_off - total_festive - total_sundays
+
+# Leaves taken only on working days (exclude saturdays off, festive days, and Sundays)
+leaves_taken = sum(
+    1 for d in leave_dates_str 
+    if d not in saturday_off_dates 
+    and d not in festive_dates_str
+    and datetime.strptime(d, "%Y-%m-%d").weekday() != 6
+)
 
 attendance_percentage = ((working_days - leaves_taken) / working_days) * 100 if working_days > 0 else 0
 
